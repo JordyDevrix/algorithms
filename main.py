@@ -1,29 +1,53 @@
-my_list = [5, 6, 2, 8, 98, 65, 45, 33, 12, 61]
-my_list.sort()
-print(my_list)
+my_list = [5, 6, 2, 8, 98, 65, 450, 33, 12, 61, 80, 38, 58, 28, 1, 7]
+my_target = 33
 
 
-def search_me(target, left, right) -> str:
-    print(target, left, right)
+def bubble_sort_me(array: list) -> list:
+    counter = 0
+    for index in range(len(array) - 1):
+        if array[index] > array[index + 1]:
+            counter += 1
+            var_large = array[index]
+            var_small = array[index + 1]
+            array[index + 1] = var_large
+            array[index] = var_small
+
+        if counter > 0:
+            return bubble_sort_me(array)
+
+    return array
+
+
+def _search_me_engine(target, right, left: int = 0) -> int or str:
     if left > right:
         return "not found"
 
     center = int((left + right) / 2)
-    print(center)
 
     if target == my_list[center]:
-        return f"found your item at index {center}"
+        return center
     elif target > my_list[center]:
-        print("left")
-        return search_me(target, center + 1, right)
+        return _search_me_engine(target, right, center + 1)
     elif target < my_list[center]:
-        print("right")
-        return search_me(target, left, center - 1)
+        return _search_me_engine(target, center - 1, left)
 
 
-my_item = 6
-index = search_me(my_item, 0, len(my_list) - 1)
+def search_me(target, array: list):
+    left = 0
+    right = len(array) - 1
+    return _search_me_engine(target, right, left)
 
-print(f"max lenght of object: {len(my_list) - 1}\nitem position: {index}")
 
+# print my_list before sorting
+print(my_list)
 
+# sorting my_list
+my_list = bubble_sort_me(my_list)
+
+# print my_list after sorting
+print(my_list)
+
+# binary search on my_list
+my_item_index = search_me(target=my_target, array=my_list)
+
+print(f"item index {my_item_index}")
