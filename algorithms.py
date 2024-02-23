@@ -1,5 +1,5 @@
 
-class SortingAlgs:
+class SortAlgs:
 
     @staticmethod
     def bubble_sort(array: list) -> list:
@@ -15,7 +15,7 @@ class SortingAlgs:
 
             # if counter is larger than 0, redo the array until counter is 0
             if counter > 0:
-                return SortingAlgs.bubble_sort(array)
+                return SortAlgs.bubble_sort(array)
 
         # returning sorted array if counter didn't exceed past 0
         return array
