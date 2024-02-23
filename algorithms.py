@@ -34,6 +34,7 @@ class SortAlgs:
                 right_cursor = index
                 if array[right_cursor] < pivot:
                     if array[right_cursor] < array[left_cursor] and left_cursor != -1:
+                        # swapping array's element places at the specific indexes
                         (array[right_cursor], array[left_cursor]) = (array[left_cursor], array[right_cursor])
                     left_cursor += 1
 
