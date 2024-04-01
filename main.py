@@ -18,23 +18,23 @@ size = len(new_list)
 start = time.perf_counter() * 1000
 print(SortAlgs.quick_sort(new_list))
 end = time.perf_counter() * 1000
-print(f"{SortAlgs.quick_sort.__name__} speed = {end - start} (multiplied bij 1000)\n")
+print(f"{SortAlgs.quick_sort.__name__} speed = {end - start} (multiplied by 1000)\n")
 
 start = time.perf_counter() * 1000
 print(SortAlgs.quick_sort_two(new_list, 0, size - 1))
 end = time.perf_counter() * 1000
-print(f"{SortAlgs.quick_sort_two.__name__} speed = {end - start} (multiplied bij 1000)\n")
+print(f"{SortAlgs.quick_sort_two.__name__} speed = {end - start} (multiplied by 1000)\n")
 
 start = time.perf_counter() * 1000
 print(SortAlgs.builtin_sort(new_list))
 end = time.perf_counter() * 1000
-print(f"{SortAlgs.builtin_sort.__name__} speed = {end - start} (multiplied bij 1000)\n")
+print(f"{SortAlgs.builtin_sort.__name__} speed = {end - start} (multiplied by 1000)\n")
 
 
 start = time.perf_counter() * 1000
 print(SortAlgs.bubble_sort(new_list))
 end = time.perf_counter() * 1000
-print(f"{SortAlgs.bubble_sort.__name__} speed = {end - start} (multiplied bij 1000)\n")
+print(f"{SortAlgs.bubble_sort.__name__} speed = {end - start} (multiplied by 1000)\n")
 
 
 
